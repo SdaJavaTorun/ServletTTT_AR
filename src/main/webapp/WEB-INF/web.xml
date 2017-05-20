@@ -9,9 +9,14 @@
     <servlet-name>HelloWorldFantastic</servlet-name>
     <servlet-class>pl.sdacademy.HelloWorldFantastic</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>TicTacToe</servlet-name>
+    <servlet-class>pl.sdacademy.TicTacToeServlet</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
-    <servlet-name>HelloWorldFantastic</servlet-name>
-    <url-pattern>/hello-fan</url-pattern>
+    <servlet-name>TicTacToe</servlet-name>
+    <url-pattern>/tic</url-pattern>
   </servlet-mapping>
 </web-app>

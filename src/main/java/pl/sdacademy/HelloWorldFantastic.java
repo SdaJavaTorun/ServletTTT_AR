@@ -14,7 +14,10 @@ public class HelloWorldFantastic extends HttpServlet {
         throws ServletException, IOException {
 
         resp.setContentType("text/html");
+        String name = req.getParameter("name");
+        if (name == null)
+            name = "Stefan";
         PrintWriter out = resp.getWriter();
-        out.println("<h1>Hello fantastic world</h1>");
+        out.println("<h1>Hello " + name + " </h1>");
     }
 }
