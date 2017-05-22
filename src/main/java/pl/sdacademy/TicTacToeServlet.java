@@ -21,20 +21,21 @@ public class TicTacToeServlet extends HttpServlet {
         }
         TicTacToe ticTacToe = (TicTacToe) session.getAttribute("board");
         if (ticTacToe == null) {
-            ticTacToe = new TicTacToe();
+            ticTacToe =
+                    new TicTacToe(
+                            Integer.parseInt(getServletConfig()
+                                    .getInitParameter("player")));
             session.setAttribute("board", ticTacToe);
         }
 
-        if (req.getParameter("x") != null &&
-               req.getParameter("y") != null) {
-
+        if (req.getParameter("x") != null && req.getParameter("y") != null) {
             int x = Integer.parseInt(req.getParameter("x"));
             int y = Integer.parseInt(req.getParameter("y"));
             ticTacToe.setField(x, y);
         }
-
         PrintWriter out = resp.getWriter();
-        out.println("<a href=\"nacisnijpole?nowagra=true\">Nowa gra</a><br />" + renderBoard(ticTacToe));
+        out.println("<a href=\"nacisnijpole?nowagra=true\">Nowa gra</a><br />Obecny gracz: <br />"
+                + ticTacToe.getCurrentPlayer() + "<br />" + renderBoard(ticTacToe));
     }
 
     private String renderBoard (TicTacToe ticTacToe) {
@@ -43,7 +44,6 @@ public class TicTacToeServlet extends HttpServlet {
                renderField(0, 1, ticTacToe) + "|" + renderField(1, 1, ticTacToe) + "|" + renderField(2, 1, ticTacToe) + "<br />"
         + "-----<br />" +
                renderField(0, 2, ticTacToe) + "|" + renderField(1, 2, ticTacToe) + "|" + renderField(2, 2, ticTacToe) + "<br />";
-
     }
 
     private String renderField(int x, int y, TicTacToe ticTacToe) {
