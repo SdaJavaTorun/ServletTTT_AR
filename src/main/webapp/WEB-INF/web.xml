@@ -19,4 +19,8 @@
     <servlet-name>TicTacToe</servlet-name>
     <url-pattern>/tic</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TicTacToe</servlet-name>
+    <url-pattern>/nacisnijpole</url-pattern>
+  </servlet-mapping>
 </web-app>
