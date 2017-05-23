@@ -14,10 +14,7 @@ public class HelloWorldFantastic extends HttpServlet {
         throws ServletException, IOException {
 
         resp.setContentType("text/html");
-        /*String name = req.getParameter("who");
-        if (name == null) {
-            name = "Stefan";
-        }*/
+
         PrintWriter out = resp.getWriter();
         String who = req.getParameter("who") != null ?
                 req.getParameter("who")

@@ -4,9 +4,49 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <servlet>
-    <servlet-name>HelloWorldFantastic</servlet-name>
-    <servlet-class>pl.sdacademy.HelloWorldFantastic</servlet-class>
+    <servlet>
+        <servlet-name>HelloOrygin</servlet-name>
+        <servlet-class>pl.sdacademy.model.HelloOrygin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloOrygin</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HelloTemplate</servlet-name>
+        <jsp-file>/hello.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloTemplate</servlet-name>
+        <url-pattern>/hello.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicTacToe</servlet-name>
+        <servlet-class>pl.sdacademy.TicTacToeServlet</servlet-class>
+       <!-- <init-param>
+            <param-name>player</param-name>
+            <param-value>2</param-value>
+        </init-param>-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TicTacToe</servlet-name>
+        <url-pattern>/tic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TTTemplate</servlet-name>
+        <jsp-file>/ttt.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TTTemplate</servlet-name>
+        <url-pattern>/ttt.jsp</url-pattern>
+    </servlet-mapping>
+
+    <!--
     <init-param>
       <param-name>who</param-name>
       <param-value>World 2 Tanks</param-value>
@@ -47,19 +87,14 @@
     <filter-name>FilterSec</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
   <servlet-mapping>
     <servlet-name>TicTacToe</servlet-name>
     <url-pattern>/tic</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>HelloWorldFantastic</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
 
-  <servlet-mapping>
+  <!--<servlet-mapping>
     <servlet-name>TicTacToe</servlet-name>
     <url-pattern>/nacisnijpole</url-pattern>
   </servlet-mapping>
-
+-->
 </web-app>
